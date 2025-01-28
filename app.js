@@ -8,7 +8,7 @@ let currentIndex = 0;
 document.getElementById('addSnippet').addEventListener('click', () => {
   const text = prompt('Enter your snippet:');
   const type = prompt('Enter type (e.g., Story, Idea, Note):');
-  if (text) {
+  if (text && type) {
     snippets.push({ text, type });
     renderSnippets();
   }
@@ -32,6 +32,10 @@ snippetList.addEventListener('click', (e) => {
 
 // Present Mode
 document.getElementById('startPresentMode').addEventListener('click', () => {
+  if (composeList.children.length === 0) {
+    alert('Add snippets to compose first.');
+    return;
+  }
   currentIndex = 0;
   showSnippet();
   presentationMode.classList.remove('hidden');

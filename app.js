@@ -47,20 +47,28 @@ function showSnippet() {
   document.getElementById('progressIndicator').textContent = `${currentIndex + 1}/${composeList.children.length}`;
 }
 
+/* Navigation Fixes */
 document.getElementById('nextSnippet').addEventListener('click', () => {
-  if (currentIndex < composeList.children.length - 1) currentIndex++;
-  showSnippet();
+  if (currentIndex < composeList.children.length - 1) {
+    currentIndex++;
+    showSnippet();
+  }
 });
 
 document.getElementById('prevSnippet').addEventListener('click', () => {
-  if (currentIndex > 0) currentIndex--;
-  showSnippet();
+  if (currentIndex > 0) {
+    currentIndex--;
+    showSnippet();
+  }
 });
 
+/* Toggle Details */
 document.getElementById('toggleDetails').addEventListener('click', () => {
-  document.getElementById('detailsDisplay').classList.toggle('hidden');
+  const details = document.getElementById('detailsDisplay');
+  details.style.display = details.style.display === 'none' ? 'block' : 'none';
 });
 
+/* Exit Present Mode */
 document.getElementById('exitPresentMode').addEventListener('click', () => {
   presentationMode.classList.add('hidden');
 });

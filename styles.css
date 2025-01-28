@@ -46,6 +46,7 @@ body {
   border: 1px solid #ddd;
 }
 
+/* Present Mode Layout Fixes */
 #presentationMode {
   position: fixed;
   top: 0;
@@ -57,7 +58,66 @@ body {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
-  padding: 2rem;
+  align-items: center;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* Header (Exit Button & Progress) */
+#presentationMode header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+#exitPresentMode {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+}
+
+/* Snippet Display */
+#presentationContent {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+}
+
+#snippetDisplay {
+  font-size: 1.8rem;
+  max-width: 90%;
+  word-wrap: break-word;
+}
+
+/* Hidden details (expandable) */
+#detailsDisplay {
+  font-size: 1.2rem;
+  margin-top: 1rem;
+  max-width: 80%;
+  display: none; /* Initially hidden */
+}
+
+/* Footer with Navigation Buttons */
+footer {
+  position: fixed;
+  bottom: 10px;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+}
+
+footer button {
+  background-color: #ff7300;
+  color: #fff;
+  padding: 0.7rem 1.2rem;
+  border: none;
+  border-radius: 5px;
+  font-size: 1rem;
+  cursor: pointer;
 }
 
 #snippetDisplay, #detailsDisplay {

@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Presenter's Toolkit Prototype</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="app-header">
+    <h1>Presenter's Toolkit</h1>
+    <button id="toggleDarkMode" class="action-btn">🌗</button>
+  </header>
+  
+  <main id="app">
+    <!-- Snippet List -->
+    <section id="snippetListSection">
+      <button id="addSnippet" class="action-btn">+ Add Snippet</button>
+      <ul id="snippetList"></ul>
+    </section>
+
+    <!-- Compose Mode -->
+    <section id="composeMode" class="hidden">
+      <h2>Compose Your Talk</h2>
+      <ul id="composeList"></ul>
+      <button id="startPresentMode" class="action-btn">Present</button>
+    </section>
+
+    <!-- Present Mode -->
+    <section id="presentationMode" class="hidden">
+      <header>
+        <button id="exitPresentMode" class="action-btn">Exit</button>
+        <div id="progressIndicator"></div>
+      </header>
+      <div id="presentationContent">
+        <div id="snippetDisplay" class="snippet"></div>
+        <div id="detailsDisplay" class="hidden">Extra details go here...</div>
+      </div>
+      <footer>
+        <button id="prevSnippet" class="action-btn">⬅️</button>
+        <button id="toggleDetails" class="action-btn">Details</button>
+        <button id="nextSnippet" class="action-btn">➡️</button>
+      </footer>
+    </section>
+  </main>
+  
+  <script src="app.js"></script>
+</body>
+</html>

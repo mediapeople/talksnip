@@ -72,3 +72,28 @@ document.getElementById('toggleDetails').addEventListener('click', () => {
 document.getElementById('exitPresentMode').addEventListener('click', () => {
   presentationMode.classList.add('hidden');
 });
+/* Navigation Fixes */
+document.getElementById('nextSnippet').addEventListener('click', () => {
+  if (currentIndex < composeList.children.length - 1) {
+    currentIndex++;
+    showSnippet();
+  }
+});
+
+document.getElementById('prevSnippet').addEventListener('click', () => {
+  if (currentIndex > 0) {
+    currentIndex--;
+    showSnippet();
+  }
+});
+
+/* Toggle Details */
+document.getElementById('toggleDetails').addEventListener('click', () => {
+  const details = document.getElementById('detailsDisplay');
+  details.style.display = details.style.display === 'none' ? 'block' : 'none';
+});
+
+/* Exit Present Mode */
+document.getElementById('exitPresentMode').addEventListener('click', () => {
+  presentationMode.classList.add('hidden');
+});
